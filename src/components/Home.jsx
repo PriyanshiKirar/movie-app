@@ -11,7 +11,7 @@ const Home = () => {
   const [wallpaper, setwallpaper] = useState(null);
   const [trending, settrending] = useState(null);  //for cards show used to
   const [categary, setcategary] = useState("all")
-
+  
   const GetHeaderwallpaper = async () => {
     try {
       const { data } = await axios.get(`/trending/all/day`)
@@ -23,10 +23,7 @@ const Home = () => {
       console.log("Error", error)
     }
   }
-
   // console.log(wallpaper)
-
-
   const GetTrending = async () => {
     try {
       const { data } = await axios.get(`/trending/${categary}/day`)

@@ -13,12 +13,13 @@ const Trending = () => {
   const [duration, setduration] = useState("day");
   const [trending, settrending] = useState([]);
   const [page, setpage] = useState(1);
-  const [hashMore, sethashMore] = useState(true)
+  const [hashMore, sethashMore] = useState(true);
 
+  document.title = "Treding" + categary.toUpperCase() 
   const GetTrending = async () => {
     try {
       const { data } = await axios.get(`/trending/${categary}/${duration}?page=${page}`)
-      console.log(data);
+      // console.log(data);
 
       // settrending(data.results);
       if (data.results.length > 0) {
@@ -54,6 +55,7 @@ const Trending = () => {
     RefreceHandler();
   },
     [categary, duration])
+
   return trending.length ? (
     <div className='w-screen h-screen  '>
       <div className='px-[5%] w-full  flex items-center justify-between '>
