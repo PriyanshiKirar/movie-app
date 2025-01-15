@@ -82,7 +82,7 @@ useEffect(() => {
        hasMore={hashMore}   //isse loading dikheing  means or api call krni h ki ni data show krne k liye
        loader={<h1>Loading.....</h1>}>
 
-       <Cadrs data={movie} title={categary} />
+       <Cadrs data={movie} title="movie" />
      </InfiniteScroll>
 
    </div>

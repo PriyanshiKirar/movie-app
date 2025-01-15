@@ -1,9 +1,11 @@
-import React from 'react'
-
-const Store = () => {
-  return (
-    <div>Store</div>
-  )
-}
-
-export default Store
+import { configureStore } from '@reduxjs/toolkit'
+import movieReducer from './reducres/movieSlice'
+import tvReducre from './reducres/tvSlice'
+import  personReducer from './reducres/personSlice'
+export const store = configureStore({
+  reducer: {
+   movie:movieReducer,
+   tv:tvReducre,
+   person:personReducer,
+  },
+})

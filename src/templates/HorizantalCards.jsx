@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const HorizantalCards = ({ data }) => {
+    console.log(data)
     return (
-       
-           
+    
 
             <div className='w-[100%]  flex  overflow-y-hidden  m-5'>
                 {data.map((d, i) => (
-                    <div key={i}
+                  <Link to={`/${d.media_type}/details/${d.id}`} key={i}
                         className='min-w-[20%]  bg-zinc-900 mr-5 mb-5'>
 
                         <img className='w-full h-[50%] object-cover'
@@ -26,7 +26,7 @@ const HorizantalCards = ({ data }) => {
                             <p className=' text-xl '>{d.overview.slice(0, 50)}...
                                 <span className='text-zinc-500'>more</span></p>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
        

@@ -22,8 +22,10 @@ const Header = ({ data }) => {
                     || data.original_title
                 }
             </h1>
-            <p className='w-[70%] text-white text-xl mt-3 mb-3'>{data.overview.slice(0, 100)}...
-                <Link className='text-blue-400'>more</Link></p>
+            <p className='w-[70%] text-white text-xl mt-3 mb-3'>
+                {data.overview.slice(0, 100)}...
+                <Link to={`/${data.media_type}/details/${data.id}`}  className='text-blue-400'>more</Link>
+                </p>
             <p className='text-white '>
                 <i className="text-yellow-400 ri-megaphone-fill"></i>{""}
                 {data.release_date || "No Information"}
@@ -37,3 +39,4 @@ const Header = ({ data }) => {
 };
 
 export default Header;
+

@@ -79,7 +79,7 @@ const People = () => {
           hasMore={hashMore}   //isse loading dikheing  means or api call krni h ki ni data show krne k liye
           loader={<h1>Loading.....</h1>}>
   
-          <Cadrs data={person} title={categary} />
+          <Cadrs data={person} title="person" />
         </InfiniteScroll>
   
       </div>

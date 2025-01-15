@@ -68,7 +68,7 @@ const TvShows = () => {
                 hasMore={hashMore}
                 loader={<h1>Loading.....</h1>}
             >
-                <Cadrs data={tv} title={categary} />
+                <Cadrs data={tv} title="tv" />
             </InfiniteScroll>
         </div>
     ) : (
