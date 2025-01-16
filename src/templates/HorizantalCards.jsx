@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const HorizantalCards = ({ data }) => {
-    console.log(data)
+    // console.log(data)
     return (
     
 

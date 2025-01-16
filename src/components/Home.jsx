@@ -36,7 +36,7 @@ const Home = () => {
     }
   }
 
-  console.log(trending, "trending data")
+  // console.log(trending, "trending data")
   
   useEffect(() => {
     GetTrending()
