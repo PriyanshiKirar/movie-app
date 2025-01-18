@@ -46,14 +46,14 @@ const HorizantalCards = ({ data }) => {
                 <Link 
                     to={`/${d.media_type}/details/${d.id}`} 
                     key={i} 
-                    className='min-w-[20%] bg-zinc-900 mr-5 mb-5'
+                    className='min-w-[20%]  bg-zinc-900 mr-5 mb-5'
                 >
                     <img 
                         className='w-full h-[50%] object-cover'
                         src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || d.poster_path}`} 
                         alt="" 
                     />
-                    <div className='text-white p-3 h-[45%]'>
+                    <div className='text-white p-3 h-[45%] overflow-y-auto'>
                         <h1 className='text-xl font-semibold'>
                             {d.title || d.name || d.original_name || d.original_title}
                         </h1>
