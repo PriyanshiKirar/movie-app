@@ -42,7 +42,7 @@ import { Link } from 'react-router-dom'
 const HorizantalCards = ({ data }) => {
     return (
         <div className='w-[100%] flex overflow-y-hidden m-5'>
-            {data.map((d, i) => (
+            {data.length>0 ?data.map((d, i) => (
                 <Link 
                     to={`/${d.media_type}/details/${d.id}`} 
                     key={i} 
@@ -53,7 +53,7 @@ const HorizantalCards = ({ data }) => {
                         src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || d.poster_path}`} 
                         alt="" 
                     />
-                    <div className='text-white p-3 h-[45%] overflow-y-auto'>
+                    <div className='text-white p-3 h-[46%] overflow-y-auto'>
                         <h1 className='text-xl font-semibold'>
                             {d.title || d.name || d.original_name || d.original_title}
                         </h1>
@@ -63,7 +63,7 @@ const HorizantalCards = ({ data }) => {
                         </p>
                     </div>
                 </Link>
-            ))}
+            )) : <h1 className='text-3xl mt-5 text-white text-center font-black'>Nothing to show</h1>}
         </div>
     )
 }

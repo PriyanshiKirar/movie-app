@@ -155,7 +155,7 @@ const Moviedetails = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-      className=' relative w-screen h-[180vh] px-[10%]'
+      className=' relative w-screen h-[190vh] px-[10%]'
     >
       {/* Part 1: Navigation */}
       <nav className='w- h-[10vh] items-center text-zinc-100 flex gap-10 text-xl'>
@@ -281,7 +281,7 @@ Play Trailer</Link>
 <HorizantalCards data=
  {info.recommendations.length>0 ? info.recommendations :info.similar}
  />
-   <Trailer/>
+   <Outlet/>
     </div>
   ) : (
     <Loading />
