@@ -226,8 +226,9 @@ Play Trailer</Link>
         {/* {info.watchproviders?.flatrate && (
           <div className='flex gap-x-10 items-center text-white'>
             <h1>Available on Platforms</h1>
-            {info.watchproviders.flatrate.map((w) => (
-              <img title={w.provider_name}
+            {info.watchproviders.flatrate.map((w,i) => (
+              <img key={i}
+              title={w.provider_name}
                 className='w-[5vh] h-[5vh] rounded-md'
                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
                 alt=""
@@ -238,8 +239,9 @@ Play Trailer</Link>
         {info.watchproviders?.buy && (
           <div className='flex gap-x-10 items-center text-white'>
             <h1>Available to Buy</h1>
-            {info.watchproviders.buy.map((w) => (
-              <img title={w.provider_name}
+            {info.watchproviders.buy.map((w,i) => (
+              <img key={i}
+               title={w.provider_name}
                 className='w-[5vh] h-[5vh] rounded-md'
                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
                 alt=""
@@ -263,8 +265,9 @@ Play Trailer</Link>
         {info.watchproviders?.free && (
           <div className='flex gap-x-10 items-center text-white'>
             <h1>Available for Rent</h1>
-            {info.watchproviders.free.map((w) => (
-              <img title={w.provider_name}
+            {info.watchproviders.free.map((w,i) => (
+              <img key={i}
+               title={w.provider_name}
                 className='w-[5vh] h-[5vh] rounded-md'
                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
                 alt=""
