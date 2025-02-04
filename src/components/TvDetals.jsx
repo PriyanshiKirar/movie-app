@@ -156,7 +156,7 @@ const TvDetals = () => {
       <hr className='mt-10 mb-5 border-none h-[2px] bg-zinc-500' />
 
       {/* paer 4  seasions */}
-      <h1 className='text-3xl mt-10  font-semibold text-white '> Seasons</h1>
+      <h1 className='text-3xl mt-10  font-semibold text-white '>Seasons</h1>
       <div className='w-[100%] flex overflow-y-hidden mb-5 p-5 '>
         {info.detail.seasons.length>0? info.detail.seasons.map((s,i) => (
        

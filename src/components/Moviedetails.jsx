@@ -280,7 +280,7 @@ Play Trailer</Link>
       </div>
       <hr  className='mt-10 mb-5 border-none h-[2px] bg-zinc-500'/>
      {/* paer 4  Recommendation and similar */}
-<h1 className='text-3xl mt-10  font-semibold text-white '> Recommendations & Similar Stuff</h1>
+<h1 className='text-3xl mt-10  font-semibold text-white '> Recommendations & Similar Stuffs</h1>
 <HorizantalCards data=
  {info.recommendations.length>0 ? info.recommendations :info.similar}
  />
