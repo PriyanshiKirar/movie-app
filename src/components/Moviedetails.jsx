@@ -132,7 +132,7 @@ import Loading from './Loading';
 import HorizantalCards from '../templates/HorizantalCards'
 import Trailer from '../templates/Trailer';
 const Moviedetails = () => {
-  const  {pathname}=useLocation()
+  const { pathname } = useLocation()
   const navigate = useNavigate();
   const { id } = useParams(); // Extracting the movie ID from the route parameters
   const { info } = useSelector((state) => state.movie);
@@ -158,7 +158,7 @@ const Moviedetails = () => {
       className=' relative w-screen h-[190vh] px-[10%]'
     >
       {/* Part 1: Navigation */}
-      <nav className='w- h-[10vh] items-center text-zinc-100 flex gap-10 text-xl'>
+      <nav className='w-full h-[10vh] items-center text-zinc-100 flex gap-10 text-xl'>
         <Link onClick={() => navigate(-1)} className="hover:text-[#6556CD] ri-arrow-left-line ml-2"></Link>
         <a target='_blank' rel="noopener noreferrer" href={info.detail?.homepage || ''}>
           <i className="ri-external-link-line"></i>
@@ -204,15 +204,15 @@ text-white w-[6vh] text-xl font-semibold rounded-full h-[6vh] flex justify-cente
             <h1>{info.detail.runtime}min
             </h1>
           </div>
-<h1 className='text-xl font-semibold italic text-zinc-200'>{info.detail.tagline}</h1>
-<h1 className='text-xl mt-5 mb-3 '>Overview</h1>
-<p >{info.detail.overview}</p>
+          <h1 className='text-xl font-semibold italic text-zinc-200'>{info.detail.tagline}</h1>
+          <h1 className='text-xl mt-5 mb-3 '>Overview</h1>
+          <p >{info.detail.overview}</p>
 
-<h1 className='text-xl mt-5 mb-3 '>Movie Tranlated</h1>
-<p className='mb-2' >{info.translations.join(" ")}</p>
-<Link className=' py-2 px-3 rounded-lg bg-[#6556CD]' to={`${pathname}/trailer`}>
-<i className="text-xl mr-3 ri-play-fill"></i>
-Play Trailer</Link>
+          <h1 className='text-xl mt-5 mb-3 '>Movie Tranlated</h1>
+          <p className='mb-2' >{info.translations.join(" ")}</p>
+          <Link className=' py-2 px-3 rounded-lg bg-[#6556CD]' to={`${pathname}/trailer`}>
+            <i className="text-xl mr-3 ri-play-fill"></i>
+            Play Trailer</Link>
         </div>
       </div>
 
@@ -239,9 +239,9 @@ Play Trailer</Link>
         {info.watchproviders?.buy && (
           <div className='flex gap-x-10 items-center text-white'>
             <h1>Available to Buy</h1>
-            {info.watchproviders.buy.map((w,i) => (
+            {info.watchproviders.buy.map((w, i) => (
               <img key={i}
-               title={w.provider_name}
+                title={w.provider_name}
                 className='w-[5vh] h-[5vh] rounded-md'
                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
                 alt=""
@@ -265,9 +265,9 @@ Play Trailer</Link>
         {info.watchproviders?.free && (
           <div className='flex gap-x-10 items-center text-white'>
             <h1>Available for Rent</h1>
-            {info.watchproviders.free.map((w,i) => (
+            {info.watchproviders.free.map((w, i) => (
               <img key={i}
-               title={w.provider_name}
+                title={w.provider_name}
                 className='w-[5vh] h-[5vh] rounded-md'
                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
                 alt=""
@@ -278,13 +278,13 @@ Play Trailer</Link>
         )}
 
       </div>
-      <hr  className='mt-10 mb-5 border-none h-[2px] bg-zinc-500'/>
-     {/* paer 4  Recommendation and similar */}
-<h1 className='text-3xl mt-10  font-semibold text-white '> Recommendations & Similar Stuffs</h1>
-<HorizantalCards data=
- {info.recommendations.length>0 ? info.recommendations :info.similar}
- />
-   <Outlet/>
+      <hr className='mt-10 mb-5 border-none h-[2px] bg-zinc-500' />
+      {/* paer 4  Recommendation and similar */}
+      <h1 className='text-3xl mt-10  font-semibold text-white '> Recommendations & Similar Stuffs</h1>
+      <HorizantalCards data=
+        {info.recommendations.length > 0 ? info.recommendations : info.similar}
+      />
+      <Outlet />
     </div>
   ) : (
     <Loading />

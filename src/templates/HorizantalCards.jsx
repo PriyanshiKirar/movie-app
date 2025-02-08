@@ -4,7 +4,7 @@
 // const HorizantalCards = ({ data }) => {
 //     // console.log(data)
 //     return (
-    
+
 
 //             <div className='w-[100%]  flex  overflow-y-hidden  m-5'>
 //                 {data.map((d, i) => (
@@ -29,7 +29,7 @@
 //                     </Link>
 //                 ))}
 //             </div>
-       
+
 //     )
 // }
 
@@ -38,20 +38,25 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import noImage from '/no images.png'
 const HorizantalCards = ({ data }) => {
     return (
         <div className='w-[100%] flex overflow-y-hidden m-5'>
-            {data.length>0 ?data.map((d, i) => (
-                <Link 
-                    to={`/${d.media_type}/details/${d.id}`} 
-                    key={i} 
+            {data.length > 0 ? data.map((d, i) => (
+                <Link
+                    to={`/${d.media_type}/details/${d.id}`}
+                    key={i}
                     className='min-w-[20%]  bg-zinc-900 mr-5 mb-5'
                 >
-                    <img 
+                    <img
                         className='w-full h-[50%] object-cover'
-                        src={`https://image.tmdb.org/t/p/original/${d.backdrop_path || d.poster_path}`} 
-                        alt="" 
+                        src={d.backdrop_path || d.poster_path
+                       ? `https://image.tmdb.org/t/p/original/${d.backdrop_path || d.poster_path
+
+                       }`
+                       :noImage
+                       }
+                        alt=""
                     />
                     <div className='text-white p-3 h-[46%] overflow-y-auto'>
                         <h1 className='text-xl font-semibold'>
