@@ -123,19 +123,23 @@ const Persondetails = () => {
            border-zinc-700 shadow-[rgba(255,255,255,.3)] shadow-lg mt-5'>
 
             {info[category + "Credits"].cast.map((c, i) =>
-              <li className='hover:text-white duration-300 cursor-pointer'>
+              <li key={i} className='hover:text-white duration-300 cursor-pointer p-5'>
 
-                <Link>
-                  <span>
-                  {c.detail.title ||
-              c.detail.name ||
-              c.detail.original_name
-              || c.detail.original_title
-            }
-                  </span>
-                  <span className='block'>Charactor Name</span>
+                <Link to={`/${category}/details/${c.id}`}>
+                  <span className='' >
+                    {c.title ||
+                      c.name ||
+                      c.original_name
+                      || c.original_title
+                    }
+                  </span >
+                  <span  className='block ml-5 mt-3'>
+                    {c.character && `  character Name:
+
+                    ${c.character}`}
+                  </span >
                 </Link>
-                Movie Name</li>
+              </li>
             )}
 
           </div>
